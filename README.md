@@ -17,7 +17,7 @@ This project demonstrates an end-to-end Data Engineering workflow for a retail c
 - Pandas
 - PostgreSQL
 - SQL
-- Power BI
+- Tableau
 
 ## Project Structure
 
@@ -41,4 +41,4 @@ screenshots/
 - Data Lineage Diagram
 - Star Schema Design
 - ETL Pipeline
-- Power BI Dashboard
+- Tableau Dashboard
