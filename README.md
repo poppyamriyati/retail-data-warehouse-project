@@ -1,8 +1,10 @@
 # Retail Data Warehouse Project
 End-to-End Retail Data Warehouse Project for BNSP Data Engineer Certification
 
+
 ## Overview
 This project demonstrates an end-to-end Data Engineering workflow for a retail company.
+
 
 ## Objectives
 - Data Profiling
@@ -12,12 +14,14 @@ This project demonstrates an end-to-end Data Engineering workflow for a retail c
 - Master Data Management
 - Data Warehouse Development
 
+
 ## Tech Stack
 - Python
 - Pandas
 - PostgreSQL
 - SQL
 - Tableau
+
 
 ## Project Structure
 
@@ -28,17 +32,67 @@ sql/
 dashboard/
 screenshots/
 
+
 ## Data Sources
 
 - customer.csv
 - product.csv
 - sales.csv
 
-## Expected Deliverables
 
-- Data Quality Report
-- Metadata Catalog
-- Data Lineage Diagram
-- Star Schema Design
-- ETL Pipeline
-- Tableau Dashboard
+## Project Deliverables
+
+### Documentation
+
+* Architecture Diagram
+* Star Schema Design
+* Metadata Catalog
+* Data Quality Report
+* Competency Mapping
+
+### Data Assets
+
+* customer.csv
+* product.csv
+* sales.csv
+
+### Engineering Assets
+
+* SQL Data Warehouse Design
+* ETL Pipeline (Extract, Transform, Load)
+
+### Analytics Assets
+
+* Business Intelligence Dashboard
+
+
+## Repository Structure
+
+```text
+retail-data-warehouse-project
+│
+├── data/
+│   ├── customer.csv
+│   ├── product.csv
+│   └── sales.csv
+│
+├── docs/
+│   ├── architecture.png
+│   ├── star_schema.png
+│   ├── metadata_catalog.xlsx
+│   ├── data_quality_report.md
+│   └── competency_mapping.md
+│
+├── sql/
+│   └── create_tables.sql
+│
+├── etl/
+│   ├── extract.py
+│   ├── transform.py
+│   └── load.py
+│
+├── dashboard/
+│
+└── README.md
+```
+
