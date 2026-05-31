@@ -46,8 +46,7 @@ screenshots/
 
 * Architecture Diagram
 * Star Schema Design
-* Metadata Catalog
-* Data Quality Report
+* Metadata Catalog (Data Dictionary and Data Quality Rule)
 * Competency Mapping
 
 ### Data Assets
