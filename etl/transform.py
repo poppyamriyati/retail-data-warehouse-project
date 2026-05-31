@@ -1,3 +1,4 @@
+```python
 import pandas as pd
 
 # Load data
@@ -7,23 +8,64 @@ sales = pd.read_csv("../data/sales.csv")
 
 print("=== DATA QUALITY CHECK ===")
 
-# Missing values
+# ====================================
+# Missing Values
+# ====================================
+
 print("\nMissing Values:")
+
+print("\nCustomer:")
 print(customer.isnull().sum())
+
+print("\nProduct:")
 print(product.isnull().sum())
+
+print("\nSales:")
 print(sales.isnull().sum())
 
-# Duplicate customers
+# ====================================
+# Duplicate Customers
+# ====================================
+
 print("\nDuplicate Customers:")
+
 duplicates = customer[
     customer.duplicated(
         subset=["email"],
         keep=False
     )
 ]
+
 print(duplicates)
 
-# Invalid dates
+# ====================================
+# Referential Integrity Check
+# ====================================
+
+print("\nInvalid Product References:")
+
+invalid_product = sales[
+    ~sales["product_id"].isin(
+        product["product_id"]
+    )
+]
+
+print(invalid_product)
+
+print("\nInvalid Customer References:")
+
+invalid_customer = sales[
+    ~sales["customer_id"].isin(
+        customer["customer_id"]
+    )
+]
+
+print(invalid_customer)
+
+# ====================================
+# Invalid Dates
+# ====================================
+
 print("\nInvalid Order Dates:")
 
 sales["order_date"] = pd.to_datetime(
@@ -37,7 +79,10 @@ invalid_dates = sales[
 
 print(invalid_dates)
 
-# Negative quantity
+# ====================================
+# Negative Quantity
+# ====================================
+
 print("\nNegative Quantity:")
 
 negative_qty = sales[
@@ -46,12 +91,30 @@ negative_qty = sales[
 
 print(negative_qty)
 
+# ====================================
+# DATA CLEANING
+# ====================================
+
 # Remove duplicate customers
 customer = customer.drop_duplicates(
     subset=["email"]
 )
 
-# Remove invalid quantity
+# Remove invalid product references
+sales = sales[
+    sales["product_id"].isin(
+        product["product_id"]
+    )
+]
+
+# Remove invalid customer references
+sales = sales[
+    sales["customer_id"].isin(
+        customer["customer_id"]
+    )
+]
+
+# Remove negative quantity
 sales = sales[
     sales["qty"] > 0
 ]
@@ -60,3 +123,30 @@ sales = sales[
 sales = sales.dropna(
     subset=["order_date"]
 )
+
+# ====================================
+# SAVE CLEAN DATASETS
+# ====================================
+
+customer.to_csv(
+    "../data/clean_customer.csv",
+    index=False
+)
+
+product.to_csv(
+    "../data/clean_product.csv",
+    index=False
+)
+
+sales.to_csv(
+    "../data/clean_sales.csv",
+    index=False
+)
+
+print("\nClean datasets created successfully.")
+
+print("\n=== CLEAN DATA SUMMARY ===")
+print(f"Customer rows: {len(customer)}")
+print(f"Product rows: {len(product)}")
+print(f"Sales rows: {len(sales)}")
+```
