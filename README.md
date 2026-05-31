@@ -17,7 +17,6 @@ This project demonstrates an end-to-end Data Engineering workflow for a retail c
 
 ## Tech Stack
 - Python
-- Pandas
 - PostgreSQL
 - SQL
 - Tableau
