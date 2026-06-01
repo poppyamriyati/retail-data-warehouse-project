@@ -56,6 +56,31 @@ This report evaluates data quality issues found in the retail datasets.
 
 ---
 
+## Data Cleansing Actions
+
+| Issue                             | Action Taken                                                      |
+| --------------------------------- | ----------------------------------------------------------------- |
+| Duplicate Customer (C006, C007)   | Duplicate record removed based on email address                   |
+| Invalid Customer Join Date (C010) | Customer record excluded from customer dimension during cleansing |
+| Invalid Order Date (O011)         | Transaction removed from clean sales dataset                      |
+| Missing Order Date (O014)         | Transaction removed from clean sales dataset                      |
+| Invalid Product Reference (P999)  | Transaction excluded from clean sales dataset                     |
+| Invalid Customer Reference (C999) | Transaction excluded from clean sales dataset                     |
+| Negative Quantity (O015)          | Transaction excluded from clean sales dataset                     |
+
+### Referential Integrity Handling
+
+The customer master record C010 contained an invalid join_date value (2024-13-01) and could not be loaded into the customer dimension.
+
+To preserve transactional history and revenue accuracy, an Unknown Customer record (customer_key = -1) was implemented in the customer dimension.
+
+Transactions referencing unavailable customer master data are mapped to the Unknown Customer surrogate key during the fact table loading process.
+
+This approach maintains referential integrity while preventing loss of valid sales transactions.
+
+
+---
+
 ## Recommendations
 
 1. Remove duplicate customer records.
