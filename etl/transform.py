@@ -1,10 +1,9 @@
-```python
 import pandas as pd
 
 # Load data
-customer = pd.read_csv("../data/customer.csv")
-product = pd.read_csv("../data/product.csv")
-sales = pd.read_csv("../data/sales.csv")
+customer = pd.read_csv("data/customer.csv")
+product = pd.read_csv("data/product.csv")
+sales = pd.read_csv("data/sales.csv")
 
 print("=== DATA QUALITY CHECK ===")
 
@@ -124,22 +123,35 @@ sales = sales.dropna(
     subset=["order_date"]
 )
 
+# Validate customer join_date
+
+customer["join_date"] = pd.to_datetime(
+    customer["join_date"],
+    errors="coerce"
+)
+
+# Remove invalid join_date
+
+customer = customer.dropna(
+    subset=["join_date"]
+)
+
 # ====================================
 # SAVE CLEAN DATASETS
 # ====================================
 
 customer.to_csv(
-    "../data/clean_customer.csv",
+    "data/clean_customer.csv",
     index=False
 )
 
 product.to_csv(
-    "../data/clean_product.csv",
+    "data/clean_product.csv",
     index=False
 )
 
 sales.to_csv(
-    "../data/clean_sales.csv",
+    "data/clean_sales.csv",
     index=False
 )
 
@@ -149,4 +161,3 @@ print("\n=== CLEAN DATA SUMMARY ===")
 print(f"Customer rows: {len(customer)}")
 print(f"Product rows: {len(product)}")
 print(f"Sales rows: {len(sales)}")
-```

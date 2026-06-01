@@ -1,11 +1,11 @@
-"product_id,product_name,category,price"
-"P001,Laptop,Electronics,12000000"
-"P002,Mouse,Electronics,150000"
-"P003,Keyboard,Electronics,350000"
-"P004,Office Chair,Furniture,900000"
-"P005,Desk,Furniture,1500000"
-"P006,Monitor,Electronics,2500000"
-"P007,USB Cable,Electronics,50000"
-"P008,Notebook,Stationery,25000"
-"P009,Pen,Stationery,10000"
-"P010,,Furniture,500000"
+product_id,product_name,category,price
+P001,Laptop,Electronics,12000000
+P002,Mouse,Electronics,150000
+P003,Keyboard,Electronics,350000
+P004,Office Chair,Furniture,900000
+P005,Desk,Furniture,1500000
+P006,Monitor,Electronics,2500000
+P007,USB Cable,Electronics,50000
+P008,Notebook,Stationery,25000
+P009,Pen,Stationery,10000
+P010,,Furniture,500000
