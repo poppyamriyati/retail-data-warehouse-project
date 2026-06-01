@@ -1,0 +1,9 @@
+customer_id,customer_name,email,city,join_date
+C001,Andi Saputra,andi@gmail.com,Jakarta,2024-01-15
+C002,Budi Santoso,budi@gmail.com,Bandung,2024-02-10
+C003,Siti Aminah,siti@gmail.com,Surabaya,2024-03-05
+C004,Rina Putri,rina@gmail.com,Jakarta,2024-03-15
+C005,Dodi Kurnia,dodi@gmail.com,Bekasi,2024-04-01
+C006,Poppy Khan,poppy@gmail.com,Jakarta,2024-04-20
+C008,,tono@gmail.com,Depok,2024-05-10
+C009,Tono Wijaya,,Depok,2024-05-10

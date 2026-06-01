@@ -1,13 +1,31 @@
 import pandas as pd
+from sqlalchemy import create_engine
 
-customer = pd.read_csv("../data/clean_customer.csv")
-product = pd.read_csv("../data/clean_product.csv")
-sales = pd.read_csv("../data/clean_sales.csv")
+# Read clean datasets
+customer = pd.read_csv("data/clean_customer.csv")
+product = pd.read_csv("data/clean_product.csv")
 
-print("Loading clean datasets...")
+# PostgreSQL connection
+engine = create_engine(
+    "postgresql://postgres:poppy123@localhost:5432/retail_dw"
+)
 
-print(f"Customer rows: {len(customer)}")
-print(f"Product rows: {len(product)}")
-print(f"Sales rows: {len(sales)}")
+print("Loading dim_customer...")
 
-print("Load completed.")
+customer.to_sql(
+    "dim_customer",
+    engine,
+    if_exists="append",
+    index=False
+)
+
+print("Loading dim_product...")
+
+product.to_sql(
+    "dim_product",
+    engine,
+    if_exists="append",
+    index=False
+)
+
+print("Load completed successfully.")
