@@ -31,7 +31,7 @@ The solution includes data quality assessment, data cleansing, dimensional model
 - PostgreSQL
 
 ### Analytics & Visualization
-- Power BI
+- Tableau
 
 ### Version Control
 - GitHub
