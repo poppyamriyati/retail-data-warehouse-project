@@ -26,11 +26,12 @@ These issues impact reporting accuracy and decision-making.
 
 The project aims to:
 
-1. Improve data quality through validation and cleansing.
-2. Integrate customer, product, and sales data into a centralized repository.
-3. Design a simple Data Warehouse using a star schema model.
-4. Enable business users to analyze sales performance through dashboards.
-5. Provide metadata and data lineage documentation to improve data governance.
+1. Improve data quality through validation and cleansing
+2. Integrate customer, product, and sales data
+3. Implement a Star Schema Data Warehouse
+4. Build an automated ETL process
+5. Support business reporting and analysis
+6. Demonstrate Data Engineering best practices
 
 ---
 
