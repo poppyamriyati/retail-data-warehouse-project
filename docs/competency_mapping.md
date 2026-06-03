@@ -1,4 +1,4 @@
-| Kompetensi      | Bukti                  |
+| Competencies      | Evidence                |
 | --------------- | ---------------------- |
 | Data Discovery  | data_quality_report.md |
 | Metadata        | metadata_catalog.xlsx  |
