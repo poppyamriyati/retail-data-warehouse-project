@@ -5,7 +5,7 @@ End-to-End Retail Data Warehouse Project developed to demonstrate Data Engineeri
 ## Overview
 A retail company stores customer, product, and sales data in separate source files. This project demonstrates how raw operational data can be transformed into a centralized Data Warehouse to support analytics and reporting.
 
-The solution includes data quality assessment, data cleansing, dimensional modeling, ETL development, PostgreSQL implementation, and Power BI dashboard visualization.
+The solution includes data quality assessment, data cleansing, dimensional modeling, ETL development, PostgreSQL implementation, and Tableau dashboard visualization.
 
 
 ## Objectives
@@ -44,7 +44,7 @@ Raw CSV Files
 → Data Cleansing
 → ETL Pipeline
 → PostgreSQL Data Warehouse
-→ Power BI Dashboard
+→ Tableau Dashboard
 
 ---
 
@@ -88,7 +88,6 @@ docs/
 etl/
 sql/
 dashboard/
-screenshots/
 
 
 ## Project Deliverables
